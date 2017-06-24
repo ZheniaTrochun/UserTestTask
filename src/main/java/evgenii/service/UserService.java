@@ -1,0 +1,20 @@
+package evgenii.service;
+
+import evgenii.exceptions.InvalidUserFieldsException;
+import evgenii.exceptions.NullValueException;
+import evgenii.exceptions.UserAlreadyExistsException;
+import evgenii.model.User;
+import evgenii.model.dto.UserDTO;
+
+/**
+ * Created by zhenia on 23.06.17.
+ */
+public interface UserService {
+    Iterable<User> getAllUsers();
+
+    User createUser(UserDTO userDTO) throws UserAlreadyExistsException, InvalidUserFieldsException, NullValueException;
+
+    User getCustomerById(Integer id) throws InvalidUserFieldsException;
+
+    User getCustomerByName(String name) throws InvalidUserFieldsException;
+}
