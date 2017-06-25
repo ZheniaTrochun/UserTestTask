@@ -24,7 +24,6 @@ public class UserController {
     private UserService userService;
 
 
-
     @ApiOperation(httpMethod = "GET",
             value = "Resource to get all users",
             response = Iterable.class,
