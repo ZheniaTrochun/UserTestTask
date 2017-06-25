@@ -32,7 +32,9 @@ public class JwtLoginFilter extends AbstractAuthenticationProcessingFilter {
     }
 
     @Override
-    public Authentication attemptAuthentication(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws AuthenticationException, IOException, ServletException {
+    public Authentication attemptAuthentication(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse)
+            throws AuthenticationException, IOException, ServletException {
+
         LoginDTO loginDTO = new ObjectMapper().readValue(httpServletRequest.getInputStream(), LoginDTO.class);
 
         httpServletResponse.setHeader("Access-Control-Allow-Origin", "http://localhost:8080");

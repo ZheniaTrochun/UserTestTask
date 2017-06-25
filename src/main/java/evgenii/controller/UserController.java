@@ -14,6 +14,7 @@ import evgenii.service.AdminServiceImpl;
 import evgenii.service.UserServiceImpl;
 
 import java.util.Iterator;
+import java.util.List;
 
 
 @RestController
@@ -28,7 +29,7 @@ public class UserController {
             response = Iterable.class,
             produces = "application/json")
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
-    public Iterable<User> getAllUsers() {
+    public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
 
@@ -40,7 +41,6 @@ public class UserController {
     @RequestMapping(value = "/createUser", method = RequestMethod.POST)
     public User createNewUser(@RequestBody UserDTO userDTO)
             throws InvalidUserFieldsException, UserAlreadyExistsException, NullValueException {
-        System.out.println("hello");
 
         return userService.createUser(userDTO);
     }

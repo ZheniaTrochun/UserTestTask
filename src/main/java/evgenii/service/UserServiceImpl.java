@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import evgenii.utils.ValidationUtils;
 
+import java.util.List;
+
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -26,7 +28,7 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
-    public Iterable<User> getAllUsers() {
+    public List<User> getAllUsers() {
         return userRepository.findAll();
     }
 
@@ -36,7 +38,7 @@ public class UserServiceImpl implements UserService {
 
         User user = userRepository.save(validationUtils.validateUser(userDTO));
 
-        LOGGER.info("User created: ", user);
+        LOGGER.info("User created: " + user.toString());
 
         return user;
     }
@@ -51,8 +53,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getCustomerByName(String name) throws InvalidUserFieldsException {
-        if (validationUtils.validateName(name))
-            throw new InvalidUserFieldsException("Name is not valid");
+//        if (validationUtils.validateName(name))
+//            throw new InvalidUserFieldsException("Name is not valid");
 
         return userRepository.findUserByUsername(name);
     }

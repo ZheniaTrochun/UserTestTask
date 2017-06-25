@@ -46,7 +46,7 @@ public class AdminServiceImpl implements AdminService {
 
         if (userDTO.phone != null) appUser.setPhone(userDTO.phone);
 
-        LOGGER.info("User updated: ", appUser);
+        LOGGER.info("User updated: " + appUser.toString());
 
         return userRepository.save(appUser);
     }

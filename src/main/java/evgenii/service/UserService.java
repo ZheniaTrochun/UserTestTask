@@ -6,11 +6,13 @@ import evgenii.exceptions.UserAlreadyExistsException;
 import evgenii.model.User;
 import evgenii.model.dto.UserDTO;
 
+import java.util.List;
+
 /**
  * Created by zhenia on 23.06.17.
  */
 public interface UserService {
-    Iterable<User> getAllUsers();
+    List<User> getAllUsers();
 
     User createUser(UserDTO userDTO) throws UserAlreadyExistsException, InvalidUserFieldsException, NullValueException;
 

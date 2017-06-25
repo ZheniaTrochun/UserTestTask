@@ -62,15 +62,15 @@ public class TokenAuthenticationService {
                 LOGGER.error(e.getMessage());
             }
 
-//            if (Objects.nonNull(appUser)) {
+            System.out.println(appUser);
+
             return user != null ?
                     new UsernamePasswordAuthenticationToken(user,
                             null,
                             new HashSet<>(Collections.singletonList(
                                     new SimpleGrantedAuthority("ROLE_" +
-                                            (appUser.getUsername().charAt(0) == 'A' ? "ADMIN" : "USER"))
+                                            (appUser.getUsername().toLowerCase().charAt(0) == 'a' ? "ADMIN" : "USER"))
                             ))) : null;
-//            }
         }
 
         return null;

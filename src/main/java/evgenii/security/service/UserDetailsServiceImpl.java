@@ -34,7 +34,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             User user = userService.getCustomerByName(s);
 
             GrantedAuthority grantedAuthority = new SimpleGrantedAuthority("ROLE_" +
-                    (user.getUsername().charAt(0) == 'A' ? "ADMIN" : "USER"));
+                    (user.getUsername().toLowerCase().charAt(0) == 'a' ? "ADMIN" : "USER"));
 
             return new org.springframework.security.core.userdetails.User(
                     user.getUsername(),

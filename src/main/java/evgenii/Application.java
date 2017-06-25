@@ -1,5 +1,7 @@
 package evgenii;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -21,6 +23,8 @@ import java.util.Arrays;
 @SpringBootApplication(scanBasePackages = {"evgenii"})
 @EnableSwagger2
 public class Application {
+    private static final Logger LOGGER = LoggerFactory.getLogger(Application.class);
+
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
@@ -30,7 +34,7 @@ public class Application {
         return args -> {
             String[] beanNames = ctx.getBeanDefinitionNames();
 
-            Arrays.stream(beanNames).forEach(n -> System.out.println(n));
+            Arrays.stream(beanNames).forEach(n -> LOGGER.trace("Bean created: ", n));
         };
     }
 

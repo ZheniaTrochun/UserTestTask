@@ -7,10 +7,6 @@
     <groupId>Interview</groupId>
     <artifactId>TestTask</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <!--<configuration>-->
-        <!--<sourse>1.8</sourse>-->
-        <!--<target>1.8</target>-->
-    <!--</configuration>-->
     <packaging>jar</packaging>
     <description>Demo project for Spring Boot</description>
     <parent>
@@ -23,71 +19,38 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <!--<version>1.5.2.RELEASE</version>-->
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-jpa</artifactId>
-            <version>1.11.4.RELEASE</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-commons-core -->
-        <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-commons-core</artifactId>
-            <version>1.4.1.RELEASE</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-core</artifactId>
-            <version>4.2.2.RELEASE</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-config</artifactId>
-            <version>4.2.2.RELEASE</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-web</artifactId>
-            <version>4.2.2.RELEASE</version>
         </dependency>
 
+        <!-- MySQL -->
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context-support</artifactId>
-            <version>4.2.2.RELEASE</version>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>
             <version>0.7.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>javax.transaction</groupId>
-            <artifactId>jta</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.eclipse.persistence</groupId>
-            <artifactId>javax.persistence</artifactId>
-            <version>2.0.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-entitymanager</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
         </dependency>
 
         <dependency>
@@ -112,7 +75,6 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <!--<java.version>1.8</java.version>-->
     </properties>
 
     <build>
